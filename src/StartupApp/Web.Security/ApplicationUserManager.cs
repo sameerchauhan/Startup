@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -13,10 +14,9 @@ namespace Web.Security
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            //var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(ApplicationDbContext.Create()));
-            var manager = new ApplicationUserManager(null);
+            var manager = new ApplicationUserManager(new ServiceUserStore());
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
@@ -51,6 +51,40 @@ namespace Web.Security
                 manager.UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+    }
+
+    //TODO
+    public class ServiceUserStore : IUserStore<ApplicationUser>
+    {
+        public void Dispose()
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        public Task CreateAsync(ApplicationUser user)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task UpdateAsync(ApplicationUser user)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task DeleteAsync(ApplicationUser user)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<ApplicationUser> FindByIdAsync(string userId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<ApplicationUser> FindByNameAsync(string userName)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
