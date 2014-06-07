@@ -10,8 +10,15 @@ namespace Web.Security.Controllers
     {
         public ActionResult Index()
         {
+            if (!SecurityEnabled)
+            {
+                return Redirect("http://localhost:50426/");                
+            }
+
             return View();
         }
+
+        public bool SecurityEnabled { get; set; }
 
         public ActionResult About()
         {

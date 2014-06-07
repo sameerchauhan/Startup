@@ -10,7 +10,8 @@ namespace StartupApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new HomeModel();
+            return View(model);
         }
 
         public ActionResult About()
@@ -26,5 +27,14 @@ namespace StartupApp.Controllers
 
             return View();
         }
+    }
+
+    public class HomeModel
+    {
+        public List<Feature> Features { get; set; }
+    }
+
+    public class Feature
+    {
     }
 }

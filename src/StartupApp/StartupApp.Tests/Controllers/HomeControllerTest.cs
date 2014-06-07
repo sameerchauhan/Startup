@@ -50,5 +50,19 @@ namespace StartupApp.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void ShouldShowTheFeaturesThatAreEnabled()
+        {
+            var features = new List<string>();
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            var model = (HomeModel)((ViewResult) controller.Index()).Model ;
+            
+            // Assert
+            Assert.AreEqual(features.Count, model.Features.Count);
+        }
     }
 }
