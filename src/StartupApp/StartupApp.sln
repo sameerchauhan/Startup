@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Security", "Web.Security\Web.Security.csproj", "{375289BB-48E0-421B-B708-4B58F0563ABE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Services", "Web.Services\Web.Services.csproj", "{2686FBA5-EC10-43E4-A58D-4030105BDB47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{646BC971-9AE5-4C3A-B3D7-98CFBBAFF7C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{375289BB-48E0-421B-B708-4B58F0563ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{375289BB-48E0-421B-B708-4B58F0563ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{375289BB-48E0-421B-B708-4B58F0563ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2686FBA5-EC10-43E4-A58D-4030105BDB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2686FBA5-EC10-43E4-A58D-4030105BDB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2686FBA5-EC10-43E4-A58D-4030105BDB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2686FBA5-EC10-43E4-A58D-4030105BDB47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{646BC971-9AE5-4C3A-B3D7-98CFBBAFF7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646BC971-9AE5-4C3A-B3D7-98CFBBAFF7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646BC971-9AE5-4C3A-B3D7-98CFBBAFF7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646BC971-9AE5-4C3A-B3D7-98CFBBAFF7C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

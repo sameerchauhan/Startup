@@ -2,8 +2,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Repository;
 
-namespace Repository
+namespace Web.Security
 {
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -14,7 +15,8 @@ namespace Repository
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
+            //var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(ApplicationDbContext.Create()));
+            var manager = new ApplicationUserManager(null);
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
