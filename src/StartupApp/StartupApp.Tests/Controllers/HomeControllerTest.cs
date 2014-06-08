@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Configuration;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StartupApp;
+using Moq;
 using StartupApp.Controllers;
 
 namespace StartupApp.Tests.Controllers
@@ -12,24 +10,28 @@ namespace StartupApp.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
-        [TestMethod]
-        public void Index()
+        private HomeController _controller;
+        private Mock<IDashBoardService> _service;
+
+        [TestInitialize]
+        public void GivenUserHasBeenRedirected()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            _service = new Mock<IDashBoardService>();
+            _controller = new HomeController(_service.Object);
 
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); // Add an Application Setting.
+            config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); // Add an Application Setting.
+            config.AppSettings.Settings.Remove("FeatureToggle.MyAwesomeFeature");
+            config.AppSettings.SectionInformation.ForceSave = true;
+            config.Save(ConfigurationSaveMode.Full);
         }
 
+       
         [TestMethod]
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(null);
 
             // Act
             ViewResult result = controller.About() as ViewResult;
@@ -42,7 +44,7 @@ namespace StartupApp.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(null);
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;
@@ -52,17 +54,35 @@ namespace StartupApp.Tests.Controllers
         }
 
         [TestMethod]
-        public void ShouldShowTheFeaturesThatAreEnabled()
+        public void ShouldShowHumanResourceDashBoardItem()
         {
-            var features = new List<string>();
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            var model = (HomeModel)((ViewResult) controller.Index()).Model ;
+            SetFeatureToogle(true);
+            var di = new DashBoardItem{Name = "Name"};
+            _service.Setup(s => s.GetDashBoardItems()).Returns(new List<DashBoardItemDto>(){new DashBoardItemDto{Name="Name"}});
             
-            // Assert
-            Assert.AreEqual(features.Count, model.Features.Count);
+            var model = (HomeModel)((ViewResult) _controller.Index()).Model ;
+            
+            Assert.AreEqual(di.Name, ((IList<DashBoardItem>)model.DashboardItems)[0].Name);
+        }
+
+        [TestMethod]
+        public void ShouldNotShowHumanResourceDashBoardItemWhenFeatureDisabled()
+        {
+            SetFeatureToogle(false);
+            _service.Setup(s => s.GetDashBoardItems()).Returns(new List<DashBoardItemDto>() { new DashBoardItemDto { Name = "Name" } });
+
+            _controller.Index();
+            
+            _service.Verify(s => s.GetDashBoardItems(), Times.Never);
+        }
+
+        private static void SetFeatureToogle(bool enabled)
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); // Add an Application Setting.
+            config.AppSettings.Settings.Add("FeatureToggle.MyAwesomeFeature", enabled.ToString());
+            config.AppSettings.SectionInformation.ForceSave = true;
+            config.Save(ConfigurationSaveMode.Full);
+            ConfigurationManager.RefreshSection("appSettings");
         }
     }
 }
