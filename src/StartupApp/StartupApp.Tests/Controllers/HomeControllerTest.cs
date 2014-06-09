@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Web.Services;
 using Web.UI.Controllers;
+using Web.UI.Models;
 
 namespace StartupApp.Tests.Controllers
 {
@@ -58,12 +59,12 @@ namespace StartupApp.Tests.Controllers
         public void ShouldShowHumanResourceDashBoardItem()
         {
             SetFeatureToogle(true);
-            var di = new DashBoardItem{Name = "Name"};
+            var di = new DashBoardItemModel{Name = "Name"};
             _service.Setup(s => s.GetDashBoardItems()).Returns(new List<DashBoardItemDto>(){new DashBoardItemDto{Name="Name"}});
             
             var model = (HomeModel)((ViewResult) _controller.Index()).Model ;
             
-            Assert.AreEqual(di.Name, ((IList<DashBoardItem>)model.DashboardItems)[0].Name);
+            Assert.AreEqual(di.Name, ((IList<DashBoardItemModel>)model.DashboardItems)[0].Name);
         }
 
         [TestMethod]

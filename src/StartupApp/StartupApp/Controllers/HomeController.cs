@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using AutoMapper;
 using Web.Services;
+using Web.UI.Models;
 using Web.UI.SampleFeatureToggles;
 
 namespace Web.UI.Controllers
@@ -22,8 +23,8 @@ namespace Web.UI.Controllers
             model.DashBoardEnabled = myAwesomeFeature.FeatureEnabled;
             if (model.DashBoardEnabled)
             {
-                Mapper.CreateMap<DashBoardItemDto, DashBoardItem>();
-                var dashBoardItems = Mapper.Map<IEnumerable<DashBoardItem>>(_service.GetDashBoardItems());
+                Mapper.CreateMap<DashBoardItemDto, DashBoardItemModel>();
+                var dashBoardItems = Mapper.Map<IEnumerable<DashBoardItemModel>>(_service.GetDashBoardItems());
                 model.DashboardItems = dashBoardItems;
             }
             return View(model);
