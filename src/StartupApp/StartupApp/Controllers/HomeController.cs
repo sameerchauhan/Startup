@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
-using FeatureToggle.Toggles;
-using StartupApp.Tests.Controllers;
+using Web.Services;
+using Web.UI.SampleFeatureToggles;
 
-namespace StartupApp.Controllers
+namespace Web.UI.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,10 +17,10 @@ namespace StartupApp.Controllers
 
         public ActionResult Index()
         {
-            var myAwesomeFeature = new MyAwesomeFeature();
+            var myAwesomeFeature = new DashBoardFeature();
             var model = new HomeModel();
-
-            if (myAwesomeFeature.FeatureEnabled)
+            model.DashBoardEnabled = myAwesomeFeature.FeatureEnabled;
+            if (model.DashBoardEnabled)
             {
                 Mapper.CreateMap<DashBoardItemDto, DashBoardItem>();
                 var dashBoardItems = Mapper.Map<IEnumerable<DashBoardItem>>(_service.GetDashBoardItems());
@@ -44,17 +43,4 @@ namespace StartupApp.Controllers
             return View();
         }
     }
-
-    public class HomeModel
-    {
-        public IEnumerable<DashBoardItem> DashboardItems { get; set; }
-    }
-
-    public class DashBoardItem
-    {
-        public string Name { get; set; }
-    }
-
-    
-    public class MyAwesomeFeature : SimpleFeatureToggle { }
 }

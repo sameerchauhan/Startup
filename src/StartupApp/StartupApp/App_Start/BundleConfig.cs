@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace StartupApp
+namespace Web.UI
 {
     public class BundleConfig
     {

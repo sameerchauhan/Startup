@@ -1,4 +1,4 @@
-namespace StartupApp.Tests.Controllers
+namespace Web.Services
 {
     public class DashBoardItemDto
     {

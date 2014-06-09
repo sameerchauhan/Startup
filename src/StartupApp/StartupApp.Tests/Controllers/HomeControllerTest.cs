@@ -3,7 +3,8 @@ using System.Configuration;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using StartupApp.Controllers;
+using Web.Services;
+using Web.UI.Controllers;
 
 namespace StartupApp.Tests.Controllers
 {
@@ -21,7 +22,7 @@ namespace StartupApp.Tests.Controllers
 
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); // Add an Application Setting.
             config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); // Add an Application Setting.
-            config.AppSettings.Settings.Remove("FeatureToggle.MyAwesomeFeature");
+            config.AppSettings.Settings.Remove("FeatureToggle.DashBoardFeature");
             config.AppSettings.SectionInformation.ForceSave = true;
             config.Save(ConfigurationSaveMode.Full);
         }
@@ -76,10 +77,32 @@ namespace StartupApp.Tests.Controllers
             _service.Verify(s => s.GetDashBoardItems(), Times.Never);
         }
 
+        [TestMethod]
+        public void ShouldShowFeatureIsDisabled()
+        {
+            SetFeatureToogle(false);
+            _service.Setup(s => s.GetDashBoardItems()).Returns(new List<DashBoardItemDto>() { new DashBoardItemDto { Name = "Name" } });
+
+            var result = (HomeModel)((ViewResult)_controller.Index()).Model;
+
+            Assert.IsFalse(result.DashBoardEnabled);
+        }
+
+        [TestMethod]
+        public void ShouldShowFeatureIsEnabled()
+        {
+            SetFeatureToogle(true);
+            _service.Setup(s => s.GetDashBoardItems()).Returns(new List<DashBoardItemDto>() { new DashBoardItemDto { Name = "Name" } });
+
+            var result = (HomeModel)((ViewResult)_controller.Index()).Model;
+
+            Assert.IsTrue(result.DashBoardEnabled);
+        }
+
         private static void SetFeatureToogle(bool enabled)
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None); // Add an Application Setting.
-            config.AppSettings.Settings.Add("FeatureToggle.MyAwesomeFeature", enabled.ToString());
+            config.AppSettings.Settings.Add("FeatureToggle.DashBoardFeature", enabled.ToString());
             config.AppSettings.SectionInformation.ForceSave = true;
             config.Save(ConfigurationSaveMode.Full);
             ConfigurationManager.RefreshSection("appSettings");

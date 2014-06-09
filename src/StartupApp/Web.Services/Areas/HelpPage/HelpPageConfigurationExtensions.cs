@@ -12,6 +12,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using Web.Services.Areas.HelpPage.ModelDescriptions;
 using Web.Services.Areas.HelpPage.Models;
+using Web.Services.Areas.HelpPage.SampleGeneration;
 
 namespace Web.Services.Areas.HelpPage
 {
