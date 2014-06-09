@@ -17,16 +17,13 @@ namespace Web.API.Tests
         public void ShouldReturnAListOfDashboardItemsToView()
         {
             var expectedItems = new List<DashBoardItem> { new DashBoardItem() };
-            var uow = new UnitOfWork(new DummyDataContext());            
-            var controller = new DashboardController(uow);
+            var uow = new Mock<IUnitOfWork>();      
+            uow.Setup(m => m.DashBoardRepository.Get()).Returns(expectedItems);
+            var controller = new DashboardController(uow.Object);
 
             var items = controller.Get();
 
             Assert.AreEqual(expectedItems.Count, ((IList)items).Count);
         }
-    }
-
-    public class DummyDataContext : DbContext
-    {
-    }
+    }  
 }

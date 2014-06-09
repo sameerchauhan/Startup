@@ -88,8 +88,10 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="DashBoardRepository.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IDashBoardRepository.cs" />
+    <Compile Include="IGenericRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork.cs" />

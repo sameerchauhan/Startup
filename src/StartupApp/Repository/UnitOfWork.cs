@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
@@ -14,13 +12,13 @@ namespace Repository
         //private GenericRepository<Department> departmentRepository;
 
 
-        public GenericRepository<DashBoardItem> DashBoardRepository
+        public IDashBoardRepository DashBoardRepository
         {
             get
             {
                 if (this._dashBoardRepository == null)
                 {
-                    _dashBoardRepository = new GenericRepository<DashBoardItem>(_context);
+                    _dashBoardRepository = new DashBoardRepository(new GenericRepository<DashBoardItem>(_context));
                 }
                 return _dashBoardRepository;
             }
@@ -33,7 +31,7 @@ namespace Repository
         }
 
         private bool _disposed = false;
-        private GenericRepository<DashBoardItem> _dashBoardRepository;
+        private DashBoardRepository _dashBoardRepository;
 
         public UnitOfWork(DbContext context)
         {
@@ -59,6 +57,4 @@ namespace Repository
         }
       
     }
-
-    
 }

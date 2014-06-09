@@ -19,7 +19,7 @@ namespace Web.Services.Controllers
 
         public IEnumerable<DashBoardItemDto> Get()
         {
-            return AutoMapper.Mapper.Map<IEnumerable<DashBoardItemDto>>(_unitOfWork.DashBoardRepository.Get(null,null,string.Empty));
+            return AutoMapper.Mapper.Map<IEnumerable<DashBoardItemDto>>(_unitOfWork.DashBoardRepository.Get());
         }
     }
 }

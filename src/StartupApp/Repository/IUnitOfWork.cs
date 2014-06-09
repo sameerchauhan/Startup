@@ -4,6 +4,6 @@ namespace Repository
 {
     public interface IUnitOfWork
     {
-        GenericRepository<DashBoardItem> DashBoardRepository { get; }
+        IDashBoardRepository DashBoardRepository { get; }
     }
 }
