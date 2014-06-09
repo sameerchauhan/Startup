@@ -16,13 +16,13 @@ namespace Web.API.Tests
         public void ShouldReturnAListOfDashboardItemsToView()
         {
             var expectedItems = new List<DashBoardItem> { new DashBoardItem() };
-            var mock = new Mock<IDashBoardRepository>();
-            mock.Setup(r => r.Get()).Returns(expectedItems);
-            var controller = new DashboardController(mock.Object);
+            var mock = new Mock<IUnitOfWork>();
+            mock.Setup(r => r.DashBoardRepository.Get()).Returns(expectedItems);
+            var controller = new DashboardController(mock.Object.DashBoardRepository);
 
             var items = controller.Get();
 
             Assert.AreEqual(expectedItems.Count, ((IList)items).Count);
         }
-    }  
+    }
 }

@@ -89,6 +89,7 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="IDashBoardRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
