@@ -1,7 +1,9 @@
-﻿namespace Repository
+﻿using Domain;
+
+namespace Repository
 {
     public interface IUnitOfWork
     {
-        IDashBoardRepository DashBoardRepository { get; set; }
+        GenericRepository<DashBoardItem> DashBoardRepository { get; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -16,13 +17,16 @@ namespace Web.API.Tests
         public void ShouldReturnAListOfDashboardItemsToView()
         {
             var expectedItems = new List<DashBoardItem> { new DashBoardItem() };
-            var mock = new Mock<IUnitOfWork>();
-            mock.Setup(r => r.DashBoardRepository.Get()).Returns(expectedItems);
-            var controller = new DashboardController(mock.Object.DashBoardRepository);
+            var uow = new UnitOfWork(new DummyDataContext());            
+            var controller = new DashboardController(uow);
 
             var items = controller.Get();
 
             Assert.AreEqual(expectedItems.Count, ((IList)items).Count);
         }
+    }
+
+    public class DummyDataContext : DbContext
+    {
     }
 }

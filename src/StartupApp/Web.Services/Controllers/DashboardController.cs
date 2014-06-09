@@ -9,17 +9,17 @@ namespace Web.Services.Controllers
 {
     public class DashboardController : ApiController
     {
-        private readonly IDashBoardRepository _dashBoardRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public DashboardController(IDashBoardRepository dashBoardRepository)
+        public DashboardController(IUnitOfWork unitOfWork)
         {
-            _dashBoardRepository = dashBoardRepository;
+            _unitOfWork = unitOfWork;
             AutoMapper.Mapper.CreateMap<DashBoardItem, DashBoardItemDto>();
         }
 
         public IEnumerable<DashBoardItemDto> Get()
         {
-            return AutoMapper.Mapper.Map<IEnumerable<DashBoardItemDto>>(_dashBoardRepository.Get());
+            return AutoMapper.Mapper.Map<IEnumerable<DashBoardItemDto>>(_unitOfWork.DashBoardRepository.Get(null,null,string.Empty));
         }
     }
 }
