@@ -109,9 +109,13 @@
       <Project>{B66B82EC-426E-4C18-9B4D-FC4C4383302C}</Project>
       <Name>Web.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Web.Services\Web.Services.csproj">
+    <ProjectReference Include="..\Web.Services\Web.API.csproj">
       <Project>{2686FBA5-EC10-43E4-A58D-4030105BDB47}</Project>
-      <Name>Web.Services</Name>
+      <Name>Web.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Service\Web.Service.csproj">
+      <Project>{96F61EDB-14FE-417D-B679-498FB8D3E1B9}</Project>
+      <Name>Web.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

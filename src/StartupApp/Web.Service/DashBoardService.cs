@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using Web.Services;
 
-namespace Web.Services
+namespace Web.Service
 {
     public class DashBoardService : IDashBoardService
     {

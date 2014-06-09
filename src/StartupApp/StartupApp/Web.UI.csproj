@@ -251,9 +251,13 @@
       <Project>{9FB11D36-A03A-448A-BC2D-C9C9F4EE9D1E}</Project>
       <Name>Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Web.Services\Web.Services.csproj">
+    <ProjectReference Include="..\Web.Services\Web.API.csproj">
       <Project>{2686FBA5-EC10-43E4-A58D-4030105BDB47}</Project>
-      <Name>Web.Services</Name>
+      <Name>Web.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Service\Web.Service.csproj">
+      <Project>{96F61EDB-14FE-417D-B679-498FB8D3E1B9}</Project>
+      <Name>Web.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

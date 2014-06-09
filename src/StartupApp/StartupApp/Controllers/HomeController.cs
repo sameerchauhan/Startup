@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
+using Web.Service;
 using Web.Services;
 using Web.UI.Models;
 using Web.UI.SampleFeatureToggles;
