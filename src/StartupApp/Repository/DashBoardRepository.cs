@@ -14,7 +14,13 @@ namespace Repository
 
         public IEnumerable<DashBoardItem> Get()
         {
-            return _genericRepository.Get(null, null, string.Empty);
+            var lst = new List<DashBoardItem>();
+            lst.Add(new DashBoardItem
+            {
+                Name = "Test"
+            });
+            return lst;
         }
+
     }
 }

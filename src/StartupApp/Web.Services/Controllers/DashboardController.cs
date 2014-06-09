@@ -17,7 +17,8 @@ namespace Web.Services.Controllers
             AutoMapper.Mapper.CreateMap<DashBoardItem, DashBoardItemDto>();
         }
 
-        public IEnumerable<DashBoardItemDto> Get()
+
+        public IEnumerable<DashBoardItemDto> GetDashboard()
         {
             return AutoMapper.Mapper.Map<IEnumerable<DashBoardItemDto>>(_unitOfWork.DashBoardRepository.Get());
         }

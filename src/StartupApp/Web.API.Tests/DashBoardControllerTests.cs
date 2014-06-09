@@ -21,7 +21,7 @@ namespace Web.API.Tests
             uow.Setup(m => m.DashBoardRepository.Get()).Returns(expectedItems);
             var controller = new DashboardController(uow.Object);
 
-            var items = controller.Get();
+            var items = controller.GetDashboard();
 
             Assert.AreEqual(expectedItems.Count, ((IList)items).Count);
         }

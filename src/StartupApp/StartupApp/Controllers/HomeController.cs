@@ -20,8 +20,11 @@ namespace Web.UI.Controllers
         public ActionResult Index()
         {
             var myAwesomeFeature = new DashBoardFeature();
-            var model = new HomeModel();
-            model.DashBoardEnabled = myAwesomeFeature.FeatureEnabled;
+            var model = new HomeModel
+            {
+                DashboardItems = new List<DashBoardItemModel>(),
+                DashBoardEnabled = myAwesomeFeature.FeatureEnabled
+            };
             if (model.DashBoardEnabled)
             {
                 Mapper.CreateMap<DashBoardItemDto, DashBoardItemModel>();
