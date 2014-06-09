@@ -4,9 +4,10 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Web.Service;
-using Web.Services;
+using Web.Services.Models;
 using Web.UI.Controllers;
 using Web.UI.Models;
+
 
 namespace StartupApp.Tests.Controllers
 {
@@ -61,7 +62,7 @@ namespace StartupApp.Tests.Controllers
         {
             SetFeatureToogle(true);
             var di = new DashBoardItemModel{Name = "Name"};
-            _service.Setup(s => s.GetDashBoardItems()).Returns(new List<DashBoardItemDto>(){new DashBoardItemDto{Name="Name"}});
+            _service.Setup(s => s.GetDashBoardItems()).Returns(new List<DashBoardItemDto>() { new DashBoardItemDto { Name = "Name" } });
             
             var model = (HomeModel)((ViewResult) _controller.Index()).Model ;
             

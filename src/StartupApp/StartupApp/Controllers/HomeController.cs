@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using AutoMapper;
 using Web.Service;
-using Web.Services;
+using Web.Services.Models;
 using Web.UI.Models;
 using Web.UI.SampleFeatureToggles;
 

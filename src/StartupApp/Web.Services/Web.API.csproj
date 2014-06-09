@@ -46,6 +46,9 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -152,6 +155,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Models\DashBoardItemDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -196,6 +201,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{646BC971-9AE5-4C3A-B3D7-98CFBBAFF7C9}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">
       <Project>{9FB11D36-A03A-448A-BC2D-C9C9F4EE9D1E}</Project>
       <Name>Repository</Name>

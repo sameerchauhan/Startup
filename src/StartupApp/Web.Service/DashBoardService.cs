@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Web.Services;
+using Web.Services.Models;
 
 namespace Web.Service
 {

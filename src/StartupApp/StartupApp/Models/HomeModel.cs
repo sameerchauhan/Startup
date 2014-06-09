@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using Web.UI.Models;
 
-namespace Web.UI.Controllers
+namespace Web.UI.Models
 {
     public class HomeModel
     {
