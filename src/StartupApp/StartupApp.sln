@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.API.Tests", "Web.API.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.EF", "Repository.EF\Repository.EF.csproj", "{912DCB4B-B10F-4DC0-9EF8-DBBBE041BEF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests", "Repository.Tests\Repository.Tests.csproj", "{A6B46BEB-5825-4D77-B6E6-BBB40E2F3FB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{912DCB4B-B10F-4DC0-9EF8-DBBBE041BEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{912DCB4B-B10F-4DC0-9EF8-DBBBE041BEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{912DCB4B-B10F-4DC0-9EF8-DBBBE041BEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B46BEB-5825-4D77-B6E6-BBB40E2F3FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B46BEB-5825-4D77-B6E6-BBB40E2F3FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B46BEB-5825-4D77-B6E6-BBB40E2F3FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B46BEB-5825-4D77-B6E6-BBB40E2F3FB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

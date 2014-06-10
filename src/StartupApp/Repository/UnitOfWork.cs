@@ -24,7 +24,9 @@ namespace Repository
             }
         }
 
-        
+        public IEmployeeRepository EmployeeRepository { get; set; }
+
+
         public void Save()
         {
             _context.SaveChanges();

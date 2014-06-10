@@ -21,6 +21,8 @@ namespace Web.UI
       var container = new UnityContainer();
 
       container.RegisterType<IDashBoardService, DashBoardService>();
+      container.RegisterType<IEmployeeService, EmployeeService>();
+
       RegisterTypes(container);
 
       return container;

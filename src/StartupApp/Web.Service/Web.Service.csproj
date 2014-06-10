@@ -48,7 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DashBoardService.cs" />
+    <Compile Include="EmployeeListDto.cs" />
+    <Compile Include="EmployeeService.cs" />
     <Compile Include="IDashBoardService.cs" />
+    <Compile Include="IEmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

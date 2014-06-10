@@ -1,12 +1,29 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using AutoMapper;
+using Web.Service;
 
 namespace Web.UI.Controllers
 {
     public class EmployeesController : Controller
     {
-        public ActionResult Index()
+        private readonly IEmployeeService _employeeService;
+
+        public EmployeesController(IEmployeeService employeeService)
         {
-            throw new System.NotImplementedException();
+            _employeeService = employeeService;
         }
+
+        public ActionResult Index(int numberOfEmployees)
+        {
+            AutoMapper.Mapper.CreateMap<EmployeeListDto, EmployeeListModel>();
+            var model = Mapper.Map<IEnumerable<EmployeeListModel>>(_employeeService.GetEmployees(numberOfEmployees));
+            return View(model);
+        }
+    }
+
+    public class EmployeeListModel
+    {
     }
 }

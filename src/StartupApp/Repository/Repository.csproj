@@ -105,6 +105,10 @@
       <Project>{646BC971-9AE5-4C3A-B3D7-98CFBBAFF7C9}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Repository.EF\Repository.EF.csproj">
+      <Project>{912DCB4B-B10F-4DC0-9EF8-DBBBE041BEF7}</Project>
+      <Name>Repository.EF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
