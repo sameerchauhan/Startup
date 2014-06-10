@@ -14,11 +14,14 @@ namespace Repository
 
         public IEnumerable<DashBoardItem> Get()
         {
-            var lst = new List<DashBoardItem>();
-            lst.Add(new DashBoardItem
+            var lst = new List<DashBoardItem>
             {
-                Name = "Test"
-            });
+                new DashBoardItem
+                {
+                    Name = "Employees",
+                    Description = "Manage your Employees"
+                }
+            };
             return lst;
         }
 

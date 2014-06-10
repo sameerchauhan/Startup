@@ -65,7 +65,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdventureWorks.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Department.cs">
       <DependentUpon>AdventureWorks.tt</DependentUpon>
     </Compile>
