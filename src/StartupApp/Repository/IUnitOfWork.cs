@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Domain;
-using Repository.EF;
+﻿using Domain;
 
 namespace Repository
 {
@@ -8,10 +6,5 @@ namespace Repository
     {
         IDashBoardRepository DashBoardRepository { get; }
         IEmployeeRepository EmployeeRepository { get; set; }
-    }
-
-    public interface IEmployeeRepository
-    {
-        IEnumerable<Employee> GetEmployees(int pageSize);
     }
 }

@@ -91,6 +91,7 @@
     <Compile Include="DashBoardRepository.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IDashBoardRepository.cs" />
+    <Compile Include="IEmployeeRepository.cs" />
     <Compile Include="IGenericRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

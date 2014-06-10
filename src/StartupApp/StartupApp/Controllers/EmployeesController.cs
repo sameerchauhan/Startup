@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using Web.Service;
+using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
@@ -21,9 +22,5 @@ namespace Web.UI.Controllers
             var model = Mapper.Map<IEnumerable<EmployeeListModel>>(_employeeService.GetEmployees(numberOfEmployees));
             return View(model);
         }
-    }
-
-    public class EmployeeListModel
-    {
     }
 }
