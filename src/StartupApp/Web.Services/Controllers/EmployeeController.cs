@@ -18,9 +18,8 @@ namespace Web.Services.Controllers
 
         public IEnumerable<EmployeeListDto> Get()
         {
-            return new List<EmployeeListDto>();
-            //Mapper.CreateMap<Employee, EmployeeListDto>();
-            //return Mapper.Map<IEnumerable<EmployeeListDto>>(_unitOfWork.EmployeeRepository.GetEmployees(pageSize));
+            Mapper.CreateMap<Employee, EmployeeListDto>();
+            return Mapper.Map<IEnumerable<EmployeeListDto>>(_unitOfWork.EmployeeRepository.GetEmployees(1));
         }
     }
 }

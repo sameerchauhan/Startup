@@ -2,6 +2,6 @@ namespace Web.UI.Models
 {
     public class EmployeeListModel
     {
-        public string Name { get; set; }
+        public string PersonFirstName { get; set; }
     }
 }
