@@ -89,6 +89,7 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="DashBoardRepository.cs" />
+    <Compile Include="EmployeeRepository.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IDashBoardRepository.cs" />
     <Compile Include="IEmployeeRepository.cs" />

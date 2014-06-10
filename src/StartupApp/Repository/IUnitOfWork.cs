@@ -5,6 +5,6 @@ namespace Repository
     public interface IUnitOfWork
     {
         IDashBoardRepository DashBoardRepository { get; }
-        IEmployeeRepository EmployeeRepository { get; set; }
+        IEmployeeRepository EmployeeRepository { get;}
     }
 }
