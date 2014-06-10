@@ -7,15 +7,42 @@
       <Diagram DiagramId="a0e8f2d5c8a84af78717e127b04982f4" Name="Diagram1">
         <EntityTypeShape EntityType="AdventureWorks2008R2Model.Department" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2008R2Model.Employee" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmployeeDepartmentHistory" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmployeePayHistory" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorks2008R2Model.JobCandidate" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmployeeDepartmentHistory" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmployeePayHistory" Width="1.5" PointX="3.375" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.JobCandidate" Width="1.5" PointX="4.25" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2008R2Model.Shift" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeeDepartmentHistory_Department_DepartmentID" ManuallyRouted="false" />
         <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" ManuallyRouted="false" />
         <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeePayHistory_Employee_BusinessEntityID" ManuallyRouted="false" />
         <AssociationConnector Association="AdventureWorks2008R2Model.FK_JobCandidate_Employee_BusinessEntityID" ManuallyRouted="false" />
         <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmployeeDepartmentHistory_Shift_ShiftID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Address" Width="1.5" PointX="3.5" PointY="27.625" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.AddressType" Width="1.5" PointX="3.5" PointY="24.875" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.BusinessEntity" Width="1.5" PointX="0.5" PointY="10.125" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.BusinessEntityAddress" Width="1.5" PointX="8.125" PointY="5.25" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.BusinessEntityContact" Width="1.5" PointX="8" PointY="15.875" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.ContactType" Width="1.5" PointX="5.75" PointY="25.25" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.CountryRegion" Width="1.5" PointX="5" PointY="36.25" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.EmailAddress" Width="1.5" PointX="5" PointY="18.5" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Password" Width="1.5" PointX="5" PointY="21.5" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.Person" Width="1.5" PointX="2.75" PointY="8.875" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.PersonPhone" Width="1.5" PointX="11" PointY="10.125" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.PhoneNumberType" Width="1.5" PointX="8.75" PointY="19.25" />
+        <EntityTypeShape EntityType="AdventureWorks2008R2Model.StateProvince" Width="1.5" PointX="4.25" PointY="31.75" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Employee_Person_BusinessEntityID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Address_StateProvince_StateProvinceID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityAddress_Address_AddressID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityAddress_AddressType_AddressTypeID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityContact_BusinessEntity_BusinessEntityID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Person_BusinessEntity_BusinessEntityID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityContact_ContactType_ContactTypeID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_BusinessEntityContact_Person_PersonID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_StateProvince_CountryRegion_CountryRegionCode" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_EmailAddress_Person_BusinessEntityID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_Password_Person_BusinessEntityID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PersonPhone_Person_BusinessEntityID" />
+        <AssociationConnector Association="AdventureWorks2008R2Model.FK_PersonPhone_PhoneNumberType_PhoneNumberTypeID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Web.Services.Models;
 
 namespace Web.Service
 {
@@ -15,7 +16,7 @@ namespace Web.Service
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 
-                var response = client.GetAsync("api/employee?pageSize="+pageSize).Result;
+                var response = client.GetAsync("api/employee").Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var employees = response.Content.ReadAsAsync<IEnumerable<EmployeeListDto>>().Result;

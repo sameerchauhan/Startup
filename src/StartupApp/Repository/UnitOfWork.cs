@@ -8,9 +8,7 @@ namespace Repository
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly DbContext _context;
-        //private GenericRepository<Department> departmentRepository;
-
-
+        
         private DashBoardRepository _dashBoardRepository;
         public IDashBoardRepository DashBoardRepository
         {

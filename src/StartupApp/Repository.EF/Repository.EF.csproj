@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressType.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
     <Compile Include="AdventureWorks.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,7 +71,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdventureWorks.edmx</DependentUpon>
     </Compile>
+    <Compile Include="BusinessEntity.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntityAddress.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntityContact.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactType.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountryRegion.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAddress.cs">
       <DependentUpon>AdventureWorks.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
@@ -80,8 +104,23 @@
     <Compile Include="JobCandidate.cs">
       <DependentUpon>AdventureWorks.tt</DependentUpon>
     </Compile>
+    <Compile Include="Password.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPhone.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneNumberType.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shift.cs">
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StateProvince.cs">
       <DependentUpon>AdventureWorks.tt</DependentUpon>
     </Compile>
   </ItemGroup>

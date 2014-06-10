@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using Web.Service;
+using Web.Services.Models;
 using Web.UI.Models;
 
 namespace Web.UI.Controllers

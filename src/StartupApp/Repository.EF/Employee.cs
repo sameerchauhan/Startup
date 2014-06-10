@@ -40,5 +40,6 @@ namespace Repository.EF
         public virtual ICollection<EmployeeDepartmentHistory> EmployeeDepartmentHistories { get; set; }
         public virtual ICollection<EmployeePayHistory> EmployeePayHistories { get; set; }
         public virtual ICollection<JobCandidate> JobCandidates { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

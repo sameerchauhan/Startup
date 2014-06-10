@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Web.Service;
+using Web.Services.Models;
 using Web.UI.Controllers;
 
 namespace StartupApp.Tests.Controllers
